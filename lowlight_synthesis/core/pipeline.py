@@ -34,17 +34,6 @@ from lowlight_synthesis.degradation.illumination import (
 )
 
 # Configure logging
-_timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-_log_file = "generation.log"
-
-logging.basicConfig(
-    level=logging.INFO,
-    format="%(asctime)s - %(levelname)s - %(message)s",
-    handlers=[
-        logging.StreamHandler(sys.stdout),
-        logging.FileHandler(_log_file, mode="w"),
-    ],
-)
 
 logger = logging.getLogger(__name__)
 
@@ -156,6 +145,18 @@ def build_lowlight_graph(
 
 
 if __name__ == "__main__":
+    _timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    _log_file = "generation.log"
+
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s - %(levelname)s - %(message)s",
+        handlers=[
+            logging.StreamHandler(sys.stdout),
+            logging.FileHandler(_log_file, mode="w"),
+        ],
+    )
+
     # Default paths (override with command-line arguments in production)
     SOURCE_DIR = "../Lowlightdataset/coco_original"
     TARGET_DIR = "../Lowlightdataset/coco_final_dark"

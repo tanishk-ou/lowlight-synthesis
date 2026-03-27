@@ -8,13 +8,13 @@ A physics-based pipeline for generating highly realistic synthetic low-light ima
 
 ## Key Innovation
 
-**Encoder trained on synthetic data beats SOTA on Ellar dataset**: A spatial action recognition encoder trained exclusively on synthetically darkened images from this pipeline outperforms prior state-of-the-art across all three Ellar subsets:
+**Encoder trained on synthetic data beats SOTA on Ellar dataset**: A spatial action recognition encoder trained exclusively on synthetically darkened images from this pipeline outperforms prior state-of-the-art across all Ellar subsets:
 
-| Subset | Our Encoder | SOTA (DGAM) | Improvement |
-|--------|-----------|-----------|-------------|
-| **Full Dataset** | 50.37% top1, 76.88% top5 | 38.42% top1, 74.44% top5 | +11.95% top1 |
-| **Low-Light (ll)** | 80.32% top1 | 58.39% | +21.93% |
-| **Extreme Low-Light (ell)** | 18.58% top1 | 14.61% | +3.97% |
+| Subset                     | Our Encoder (Top-1 Acc) | SOTA (DGAM) (Top-1 Acc) | Improvement |
+|---------------------------|-------------------------|--------------------------|-------------|
+| Full Dataset              | 50.37%                  | 38.42%                   | +11.95%     |
+| Low-Light (ll)            | 80.32%                  | 58.39%                   | +21.93%     |
+| Extreme Low-Light (ell)   | 18.58%                  | 14.61%                   | +3.97%      |
 
 **Model Repository**: See [tanishk-ou/lowlight-multitask-unet](https://github.com/tanishk-ou/lowlight-multitask-unet) for the encoder implementation and training code.
 

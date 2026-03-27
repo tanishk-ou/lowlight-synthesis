@@ -12,6 +12,9 @@ Key Features:
     - Significantly outperforms standard low-light datasets (ARID)
 """
 
+# Enable TensorFlow 1.x compatibility for latest TensorFlow versions
+import tensorflow.compat.v1 as tf
+
 __version__ = "1.0.0"
 __author__ = "Tanishk Gopalani"
 __license__ = "Apache License 2.0"
