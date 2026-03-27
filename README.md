@@ -16,7 +16,7 @@ A physics-based pipeline for generating highly realistic synthetic low-light ima
 | **Low-Light (ll)** | 80.32% top1 | 58.39% | +21.93% |
 | **Extreme Low-Light (ell)** | 18.58% top1 | 14.61% | +3.97% |
 
-**Model Repository**: See [`[model-repo-placeholder]`](https://github.com/user/repo) for the encoder implementation and training code.
+**Model Repository**: See [tanishk-ou/lowlight-multitask-unet](https://github.com/tanishk-ou/lowlight-multitask-unet) for the encoder implementation and training code.
 
 This validates that **statistically-accurate synthetic degradation** prepares models for real low-light image formation better than real examples, likely because manual annotation introduces systematic biases in extreme conditions.
 
@@ -230,7 +230,7 @@ And acknowledge the foundational work:
 
 Apache License 2.0 - see [LICENSE](LICENSE)
 
-**Attribution**: This work includes code and techniques from Tim Brooks et al.'s "Unprocessing Images for Learned Raw Denoising" (CVPR 2019). See [`third_party/isp_utils/README.md`](third_party/isp_utils/README.md) for the original paper citation and repository link.
+**Attribution**: This work includes code and techniques from Tim Brooks et al.'s "Unprocessing Images for Learned Raw Denoising" (CVPR 2019). See [`acknowledgements/isp_utils/README.md`](acknowledgements/isp_utils/README.md) for the original paper citation and repository link.
 
 ---
 

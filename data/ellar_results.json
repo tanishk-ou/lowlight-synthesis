@@ -13,7 +13,7 @@
     "best_epoch": 243,
     "learning_rate": 1e-4,
     "batch_size": 6,
-    "device": "NVIDIA GPU"
+    "device": "NVIDIA TITAN RTX GPU"
   },
 
   "primary_validation": {
@@ -72,16 +72,6 @@
     "validation": "Models trained on synthetic data transfer to real low-light without overfitting noise artifacts"
   },
 
-  "computational_performance": {
-    "generation_time_per_image_seconds": 2.34,
-    "projected_generation_time_per_1000_images": 39,
-    "total_dataset_generation_time_hours": 52,
-    "images_processed_in_validation": 82000,
-    "gpu_memory_required_per_image_mb": 512,
-    "framework": "TensorFlow 1.x with CUDA",
-    "device_tested": "NVIDIA RTX 3080 Ti"
-  },
-
   "limitations_and_notes": [
     "Pre-trained on ImageNet which provides strong backbone features",
     "Evaluation on Ellar shows generalization to extreme conditions",
@@ -94,7 +84,7 @@
     "random_seed": 42,
     "torch_version": "1.x+",
     "tensorflow_version": "1.14+ (1.x series)",
-    "code_repository": "github.com/[user]/lowlight-synthesis",
+    "code_repository": "github.com/tanishk-ou/lowlight-synthesis",
     "model_checkpoint_available": true,
     "checkpoint_hash": "best_classifier_linear_mean_50.37_18.58_80.32.pt"
   },

@@ -29,7 +29,7 @@
 *.7z binary
 *.rar binary
 
-# Data files (if using Git LFS, uncomment)
-# *.h5 filter=lfs diff=lfs merge=lfs -text
-# *.ckpt filter=lfs diff=lfs merge=lfs -text
-# *.npy filter=lfs diff=lfs merge=lfs -text
+# Data files
+*.h5 filter=lfs diff=lfs merge=lfs -text
+*.ckpt filter=lfs diff=lfs merge=lfs -text
+*.npy filter=lfs diff=lfs merge=lfs -text
