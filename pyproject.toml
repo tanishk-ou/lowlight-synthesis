@@ -1,0 +1,38 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lowlight-synthesis"
+version = "1.0.0"
+description = "Statistical low-light image synthesis with realistic sensor simulation"
+readme = "README.md"
+requires-python = ">=3.8"
+license = {text = "Apache License 2.0"}
+authors = [
+    {name = "Tanishk Gopalani"}
+]
+keywords = [
+    "low-light",
+    "image-synthesis",
+    "sensor-simulation",
+    "image-processing",
+    "computational-photography"
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Scientific/Engineering :: Image Processing",
+]
+
+dependencies = [
+    "tensorflow>=1.14,<2.0",
+    "numpy>=1.19.0",
+    "opencv-python>=4.5.0",
+    "tqdm>=4.60.0",
+]
