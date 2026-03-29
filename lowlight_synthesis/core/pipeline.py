@@ -1,15 +1,7 @@
 """Main low-light synthesis pipeline.
 
-Orchestrates the complete process of converting sRGB images into realistic
-synthetic low-light images through sensor simulation and statistical degradation.
-
-The pipeline:
-1. Unprocess sRGB to raw Bayer with realistic noise
-2. Denoise/smooth via bilateral filter
-3. Decompose into illumination and detail layers
-4. Apply probabilistic darkening
-5. Re-process through ISP with contrast and saturation adjustments
-6. Export as sRGB JPEG
+Orchestrates the conversion of sRGB images into realistic synthetic low-light
+images via sensor simulation (unprocessing) and physically-motivated statistical degradation.
 """
 
 import os
@@ -48,21 +40,9 @@ def build_lowlight_graph(
 ) -> None:
     """Build and execute the low-light synthesis TensorFlow graph.
 
-    This function constructs a complete TensorFlow computation graph that
-    transforms an sRGB image into a synthetic low-light version with
-    realistic sensor degradation.
-
-    The process:
-    1. Load sRGB image and convert to [0, 1] range
-    2. Unprocess to raw Bayer sensor data
-    3. Add realistic shot and read noise
-    4. Re-process through ISP (demosaicing, white balance, color correction)
-    5. Estimate illumination via bilateral filter
-    6. Decompose into illumination and detail layers
-    7. Darken illumination by the specified factor
-    8. Apply S-curve contrast enhancement
-    9. Adjust saturation
-    10. Gamma compress back to sRGB and save
+    Constructs a computation graph to unprocess an sRGB image, inject realistic
+    sensor degradation and noise, manipulate illumination/contrast, and re-process
+    the output to a valid sRGB string format.
 
     Args:
         source_path_tensor: TensorFlow path tensor to input image

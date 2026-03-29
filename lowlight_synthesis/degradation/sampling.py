@@ -34,14 +34,7 @@ def weighted_random_linear(
     main_weight: float = 0.75,
     low_weight: float = 0.10,
 ) -> float:
-    """Weighted sampling with linear interpolation between ranges.
-
-    Samples from three regions with controllable probabilities:
-    - Main region [main_lo, main_hi] with high probability (concentrated)
-    - Low region [min_val, main_lo] with medium probability
-    - High region [main_hi, max_val] with low probability
-
-    Uses beta distributions (5,5) for symmetric concentration within each region.
+    """Sample linearly across non-uniform probability bands.
 
     Args:
         min_val: Absolute minimum value
@@ -74,13 +67,7 @@ def weighted_random_log(
     main_hi: float,
     main_weight: float = 0.75,
 ) -> float:
-    """Weighted sampling with logarithmic interpolation between ranges.
-
-    Used for parameters with logarithmic scale (e.g., noise, illumination).
-    Samples in log space to match sensor behavior which is naturally logarithmic.
-
-    - Main region: [min_val, main_hi] with high probability
-    - Extended region: [min_val, max_val] with low probability
+    """Sample logarithmically across multiple probability bands.
 
     Args:
         min_val: Absolute minimum value (log scale)
@@ -114,14 +101,7 @@ def log_right_skewed_with_peak(
     alpha: float = 2.2,
     beta: float = 6.0,
 ) -> float:
-    """Right-skewed log-space distribution centered at a specified peak.
-
-    Designed for realistic sensor noise levels which follow a right-skewed
-    distribution with a natural peak (mode) around typical sensor noise floor.
-
-    The alpha and beta parameters are tuned to match observed noise behavior:
-    - alpha=2.2 < beta=6.0 creates right skew (tail extends to high values)
-    - Peak occurs at mode = (alpha-1)/(alpha+beta-2) ≈ 0.17 in normalized space
+    """Sample from a custom skewed noise distribution with tunable peak values.
 
     Args:
         min_val: Minimum noise level

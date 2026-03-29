@@ -11,14 +11,7 @@ import tensorflow.compat.v1 as tf
 def adjust_linear_saturation(linear_image: tf.Tensor, saturation_factor: float) -> tf.Tensor:
     """Adjust saturation on a linear RGB image.
 
-    Saturation adjustment in linear RGB space preserves luminance while scaling
-    chrominance (color) information. A factor > 1.0 increases saturation,
-    < 1.0 decreases it.
-
-    The operation:
-    1. Compute luminance using ITU-R BT.709 weights
-    2. Extract chrominance as (image - luminance)
-    3. Scale chrominance and recombine
+    Scales the chrominance of the image relative to ITU-R BT.709 luminance values.
 
     Args:
         linear_image: Input image in linear RGB space (values 0-1)
@@ -42,15 +35,7 @@ def adjust_linear_saturation(linear_image: tf.Tensor, saturation_factor: float) 
 
 
 def apply_s_curve_contrast(linear_image: tf.Tensor, strength: float = 1.0) -> tf.Tensor:
-    """Apply a contrast-enhancing S-curve in linear space.
-
-    The S-curve function f(x) = 3x² - 2x³ creates:
-    - A fixed point at x=0.5 (no change at mid-tones)
-    - Enhanced contrast in shadows (x < 0.5) and highlights (x > 0.5)
-    - Strength parameter controls blend between original and S-curve
-
-    Mathematical form:
-    - output = x(1-strength) + [3x² - 2x³] * strength
+    """Apply a blended S-curve transformation to enhance contrast.
 
     Args:
         linear_image: Input image in linear RGB space (values 0-1)
@@ -73,13 +58,7 @@ def darken_illumination(
     illumination_factor: float,
     detail_layer: tf.Tensor,
 ) -> tf.Tensor:
-    """Apply illumination darkening using the detail layer.
-
-    Separates the image into illumination and detail components using
-    bilateral filtering, then reduces illumination to create low-light effect
-    while preserving detail.
-
-    The low-light effect is: darkened_illumination × detail_layer
+    """Darken the estimated bulk illumination of an image while preserving high-frequency details.
 
     Args:
         linear_image: Original linear RGB image
