@@ -7,10 +7,10 @@
     "backbone": "ResNet-50 (ImageNet pre-trained)",
     "training_data_source": "MS-COCO dataset (natural exposures)",
     "synthetic_processing": "statistical_low_light_synthesis_pipeline",
-    "aggregation_method": "MEAN aggregation over video frames",
+    "aggregation_method": "SIMPLE ATTENTION aggregation over video frames",
     "head_type": "linear fine-tune",
-    "training_epochs": 243,
-    "best_epoch": 243,
+    "training_epochs": 605,
+    "best_epoch": 505,
     "learning_rate": 1e-4,
     "batch_size": 6,
     "device": "NVIDIA TITAN RTX GPU"
@@ -19,12 +19,12 @@
   "primary_validation": {
     "dataset": "Ellar (Extreme Low-Light Action Recognition)",
     "task": "video action recognition in extremely dark conditions",
-    "full_dataset_top1_accuracy": 0.5037,
-    "full_dataset_top5_accuracy": 0.7688,
-    "ellar_extreme_lowlight_top1": 0.1858,
-    "ellar_extreme_lowlight_top5": 0.5294,
-    "lowlight_subset_top1": 0.8032,
-    "lowlight_subset_top5": 0.9944,
+    "full_dataset_top1_accuracy": 0.5662,
+    "full_dataset_top5_accuracy": 0.8143,
+    "ellar_extreme_lowlight_top1": 0.2319,
+    "ellar_extreme_lowlight_top5": 0.6257,
+    "lowlight_subset_top1": 0.8811,
+    "lowlight_subset_top5": 0.9920,
     "ellar_note": "ELL = Extreme Low-Light conditions (ground-truth evaluation on Ellar's extremely dark videos)",
     "lowlight_note": "LL = Low-light subset of Ellar dataset"
   },
@@ -34,8 +34,8 @@
     "training_dataset_size": "82000+ images from COCO",
     "evaluation_date": "2026-03-03",
     "checkpoint_file": "best_classifier_linear_mean_50.37_18.58_80.32.pt",
-    "final_loss": 0.9269,
-    "validation_accuracy_at_best": 0.4689
+    "final_loss": 1.0675,
+    "validation_accuracy_at_best": 0.5666
   },
 
   "key_findings": {
@@ -75,8 +75,8 @@
   "limitations_and_notes": [
     "Pre-trained on ImageNet which provides strong backbone features",
     "Evaluation on Ellar shows generalization to extreme conditions",
-    "LL subset results (80.32% → 99.44% top1/5) show excellent performance on standard low-light",
-    "ELL subset results (18.58%) reflect extreme difficulty of Ellar dataset itself (designed to be notoriously hard)",
+    "LL subset results (88.11% → 99.20% top1/5) show excellent performance on standard low-light",
+    "ELL subset results (23.19%) reflect extreme difficulty of Ellar dataset itself (designed to be notoriously hard)",
     "Current implementation uses TensorFlow 1.x (TF 2.x migration planned for future releases)"
   ],
 

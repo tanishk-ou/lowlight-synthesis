@@ -12,9 +12,9 @@ A physics-based pipeline for generating highly realistic synthetic low-light ima
 
 | Subset                     | Our Encoder (Top-1 Acc) | SOTA (DGAM) (Top-1 Acc) | Improvement |
 |---------------------------|-------------------------|--------------------------|-------------|
-| Full Dataset              | 50.37%                  | 38.42%                   | +11.95%     |
-| Low-Light (ll)            | 80.32%                  | 58.39%                   | +21.93%     |
-| Extreme Low-Light (ell)   | 18.58%                  | 14.61%                   | +3.97%      |
+| Full Dataset              | 56.62%                  | 38.42%                   | +18.20%     |
+| Low-Light (ll)            | 88.11%                  | 58.39%                   | +29.72%     |
+| Extreme Low-Light (ell)   | 23.19%                  | 14.61%                   | +8.58%      |
 
 **Model Repository**: See [tanishk-ou/lowlight-multitask-unet](https://github.com/tanishk-ou/lowlight-multitask-unet) for the encoder implementation and training code.
 
