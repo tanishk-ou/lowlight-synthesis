@@ -2,10 +2,6 @@
 
 A physics-based pipeline for generating highly realistic synthetic low-light images from normal-exposure photographs. This work demonstrates that synthetic data generated through accurate sensor simulation and statistical degradation modeling can **outperform real low-light datasets** on challenging benchmarks.
 
-[![License: Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](LICENSE)
-[![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-[![TensorFlow 1.14+](https://img.shields.io/badge/TensorFlow-1.14+-orange.svg)](https://tensorflow.org)
-
 ## Key Innovation
 
 **Encoder trained on synthetic data beats SOTA on Ellar dataset**: A spatial action recognition encoder trained exclusively on synthetically darkened images from this pipeline outperforms prior state-of-the-art across all Ellar subsets:
