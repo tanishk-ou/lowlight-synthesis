@@ -1,35 +1,12 @@
+# Auto-detect text files and normalise line endings
 * text=auto
 
-# Documents
+# Source code — enforce LF
+*.py text eol=lf
 *.md text eol=lf
 *.txt text eol=lf
-*.yml text eol=lf
-*.yaml text eol=lf
+*.toml text eol=lf
 *.json text eol=lf
-*.bib text eol=lf
 
-# Source code
-*.py text eol=lf
-*.pyc binary
-*.pyo binary
-*.pyd binary
-
-# Images
-*.png binary
-*.jpg binary
-*.jpeg binary
-*.gif binary
-*.ico binary
-*.mov binary
-*.mp4 binary
-
-# Archives
-*.zip binary
-*.tar.gz binary
-*.7z binary
-*.rar binary
-
-# Data files
-*.h5 filter=lfs diff=lfs merge=lfs -text
-*.ckpt filter=lfs diff=lfs merge=lfs -text
-*.npy filter=lfs diff=lfs merge=lfs -text
+# Data files (binary, no diff)
+*.json diff
