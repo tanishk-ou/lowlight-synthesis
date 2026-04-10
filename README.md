@@ -191,11 +191,12 @@ lowlight_synthesis/
 If you use this work, please cite:
 
 ```bibtex
-@software{lowlight_synthesis_2026,
-  title={Statistical Low-Light Image Synthesis with Sensor Simulation},
+@misc{gopalani2026lowlight,
+  title={Physics-Informed Synthetic Darkening via Linear-Space Retinex Decomposition},
   author={Gopalani, Tanishk},
   year={2026},
-  url={https://github.com/tanishk_github/lowlight-synthesis}
+  note={Under review at CVIP 2026},
+  url={https://github.com/tanishk-ou/lowlight-synthesis}
 }
 ```
 
