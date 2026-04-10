@@ -33,7 +33,7 @@
     "run_id": "run_mean_aggregation",
     "training_dataset_size": "82000+ images from COCO",
     "evaluation_date": "2026-03-03",
-    "checkpoint_file": "best_classifier_linear_mean_50.37_18.58_80.32.pt",
+    "checkpoint_file": "best_classifier_linear_attention.pt",
     "final_loss": 1.0675,
     "validation_accuracy_at_best": 0.5666
   },
@@ -86,7 +86,7 @@
     "tensorflow_version": "1.14+ (1.x series)",
     "code_repository": "github.com/tanishk-ou/lowlight-synthesis",
     "model_checkpoint_available": true,
-    "checkpoint_hash": "best_classifier_linear_mean_50.37_18.58_80.32.pt"
+    "checkpoint_hash": "best_classifier_linear_attention.pt"
   },
 
   "timestamp": "2026-03-03T01:42:42Z",
